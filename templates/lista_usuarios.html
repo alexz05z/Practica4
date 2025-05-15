@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Usuarios{% endblock %}
+{% block content %}
+<h1>Usuarios Registrados</h1>
+
+
+<li>
+    {% for usuario in usuarios %}
+
+    <ul>Nombre: {{ usuario.nombre }}</ul>
+    <ul>Email: {{ usuario.email }}</ul>
+    <ul>Fecha de Registro: {{ usuario.fecha_registro.strftime('%d/%m/%Y %H:%M') if usuario.fecha_registro else '—' }}</ul>
+
+    {% endfor %}
+</li>
+
+{% endblock %}

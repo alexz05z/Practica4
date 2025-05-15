@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TecnoMarket{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>TecnoMarket</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Hecho por Alejandro Rodriguez Sanchez - {{ fecha.year }}</p>
+    </footer>
+</body>
+</html>

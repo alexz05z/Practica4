@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Bienvenido, {{ nombre_admin }}</h2>
+<p><strong>Tienda:</strong> {{ tienda }}</p>
+<p><strong>Fecha:</strong> {{ fecha }}</p>
+
+<hr>
+
+<h3>Productos</h3>
+
+<li>
+    {% for producto in productos %}
+
+    <ul>Nombre: {{ producto.nombre }}</ul>
+    <ul>Precio: {{ producto.precio }}</ul>
+    <ul>Stock: 
+        {% if producto.stock == 0 %}
+            <span>Agotado</span>
+        {% else %}
+            {{ producto.stock }}
+        {% endif %}</ul>
+    ul>Categoría: {{ producto.categoria }}</ul>
+    <ul>Detalle: <a href="{{ url_for('detalle_producto', id_producto=producto._id) }}">Ver detalle</a></ul>
+
+    {% endfor %}
+</li>
+
+<p><strong>Total en stock:</strong> {{ total_stock }}</p>
+
+<hr>
+
+<h3>Clientes</h3>
+<li>
+    {% for usuario in usuarios %}
+
+    <ul>Nombre: {{ usuario.nombre }}</ul>
+    <ul>Email: {{ usuario.email }}</ul>
+    <ul>Fecha de Registro: {{ usuario.fecha_registro.strftime('%d/%m/%Y %H:%M') if usuario.fecha_registro else '—' }}</ul>
+
+    {% endfor %}
+</li>
+<p><strong>Clientes activos:</strong> {{ clientes_activos }}</p>
+<p><strong>Cliente con más pedidos:</strong> {{ cliente_pedido.nombre }} ({{ cliente_pedido.pedidos }} pedidos)</p>
+
+<hr>
+
+<h3>Pedidos recientes</h3>
+
+<li>
+    {% for pedido in pedidos %}
+
+    <ul>Cliente: {{ pedido.cliente }}</ul>
+    <ul>Total: {{ pedido.total }}</ul>
+    <ul>Fecha: {{ pedido.fecha }}</ul>
+
+    {% endfor %}
+</li>
+
+<p><strong>Total de ingresos:</strong> ${{ total_ingresos }}</p>
+
+{% endblock %}
