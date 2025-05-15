@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}TecnoMarket{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <header>
-        <h1>TecnoMarket</h1>
-    </header>
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer>
-        <p>Hecho por Alejandro Rodriguez Sanchez - {{ fecha.year }}</p>
-    </footer>
+    <div>
+        <header>
+            <h1>TecnoMarket</h1>
+    
+            <nav class="navegacion">
+                <ul>
+                     <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('ver_productos') }}">Productos</a></li>
+                    <li><a href="{{ url_for('añadir_producto') }}">Añadir Producto</a></li>
+                    <li><a href="{{ url_for('registro_usuario') }}">Registro Usuario</a></li>
+                    <li><a href="{{ url_for('lista_usuarios') }}">Usuarios</a></li>
+                </ul>
+            </nav>  
+    
+        </header>
+    
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    
+        <footer class="creditos">
+            <p>Hecho por Alejandro Rodriguez Sanchez - </p>
+        </footer>
+    </div>
 </body>
 </html>

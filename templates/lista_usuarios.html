@@ -3,15 +3,19 @@
 {% block content %}
 <h1>Usuarios Registrados</h1>
 
-
-<li>
-    {% for usuario in usuarios %}
-
-    <ul>Nombre: {{ usuario.nombre }}</ul>
-    <ul>Email: {{ usuario.email }}</ul>
-    <ul>Fecha de Registro: {{ usuario.fecha_registro.strftime('%d/%m/%Y %H:%M') if usuario.fecha_registro else '—' }}</ul>
-
-    {% endfor %}
-</li>
+<div>
+    <ul>
+        {% for usuario in usuarios %}
+    
+        <li>Nombre: {{ usuario.nombre }}</li>
+        <li>Email: {{ usuario.email }}</li>
+        <li>Fecha de Registro: {{ usuario.fecha_registro.strftime('%d/%m/%Y %H:%M') if usuario.fecha_registro else '—' }}</li>
+        <li>N° de pedidos: {{ usuario.pedidos }}</li>
+        <li>Actividad: {{usuario.activo}}</li>
+        <li>Nº de pedidos: {{usuario.numero_pedidos}}</li>
+    
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}

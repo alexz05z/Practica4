@@ -1,0 +1,71 @@
+html{
+    text-align: center;
+}
+
+ul{
+    list-style: circle outside;
+            
+}
+div{
+    border-bottom: solid black 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.navegacion{
+    text-align: center;
+    color: rgb(241, 239, 252);
+    background-color: gray;
+}
+
+
+
+
+
+a {
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+
+a:focus{
+    border-bottom: 2px solid black;
+    
+}
+
+a:hover{
+    border-bottom: 2px solid black;
+}
+
+.navegacion a {
+    color: rgb(241, 239, 252);
+    text-decoration: none;
+    outline: none;
+}
+
+.navegacion a:focus{
+    border-bottom: 2px solid rgb(241, 239, 252);
+    
+}
+
+.navegacion a:hover{
+    border-bottom: 2px solid rgb(241, 239, 252);
+}
+
+footer{text-align: center;
+    background-color: black;         
+}
+.creditos{
+    background-color: gray;
+    border: solid 1px;
+    color: whitesmoke;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+}

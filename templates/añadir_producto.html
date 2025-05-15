@@ -9,19 +9,23 @@
     <p><strong>{{ mensaje }}</strong></p>
 {% endif %}
 
-<form method="POST">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" name="nombre" id="nombre" required><br><br>
 
-    <label for="precio">Precio ($):</label><br>
-    <input type="number" name="precio" id="precio" step="0.01" required><br><br>
+<div>
+    <form method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" name="nombre" id="nombre" required><br><br>
+    
+        <label for="precio">Precio ($):</label><br>
+        <input type="number" name="precio" id="precio" step="0.01" required><br><br>
+    
+        <label for="stock">Stock:</label><br>
+        <input type="number" name="stock" id="stock" required><br><br>
+    
+        <label for="categoria">Categoría:</label><br>
+        <input type="text" name="categoria" id="categoria" required><br><br>
+    
+        <button type="submit">Añadir Producto</button>
+    </form>
+</div>
 
-    <label for="stock">Stock:</label><br>
-    <input type="number" name="stock" id="stock" required><br><br>
-
-    <label for="categoria">Categoría:</label><br>
-    <input type="text" name="categoria" id="categoria" required><br><br>
-
-    <button type="submit">Añadir Producto</button>
-</form>
 {% endblock %}

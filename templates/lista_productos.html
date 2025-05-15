@@ -5,22 +5,25 @@
 {% block content %}
 <h2>Productos en Inventario</h2>
 
+<div>
+    <ul>
+        {% for producto in productos %}
+    
+        <li>Nombre: {{ producto.nombre }}</li>
+        <li>Precio: {{ producto.precio }}</li>
+        <li>Stock: 
+            {% if producto.stock == 0 %}
+                <span>Agotado</span>
+            {% else %}
+                {{ producto.stock }}
+            {% endif %}</li>
+        <li>Categoría: {{ producto.categoria }}</li>
+        </li>
+        <li>Detalle: <a href="{{ url_for('detalle_producto', id_producto=producto._id) }}">Ver detalle</li>
+    
+        {% endfor %}
+    </ul>
+</div>
 
-<li>
-    {% for producto in productos %}
-
-    <ul>Nombre: {{ producto.nombre }}</ul>
-    <ul>Precio: {{ producto.precio }}</ul>
-    <ul>Stock: 
-        {% if producto.stock == 0 %}
-            <span>Agotado</span>
-        {% else %}
-            {{ producto.stock }}
-        {% endif %}</ul>
-    ul>Categoría: {{ producto.categoria }}</ul>
-    <ul>Detalle: <a href="{{ url_for('detalle_producto', id_producto=producto._id) }}">Ver detalle</a></ul>
-
-    {% endfor %}
-</li>
 
 {% endblock %}

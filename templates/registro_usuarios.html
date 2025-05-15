@@ -2,12 +2,18 @@
 {% block title %}Registro de Usuario{% endblock %}
 {% block content %}
 <h1>Registro de Usuario</h1>
-<form method="post">
-    <label>Nombre:</label><input type="text" name="nombre" required><br>
-    <label>Email:</label><input type="email" name="email" required><br>
-    <label>Contraseña:</label><input type="password" name="contraseña" required><br>
-    <button type="submit">Registrar</button>
-</form>
+
+<div>
+    <form method="post">
+        <label>Nombre:</label><input type="text" name="nombre" required><br>
+        <label>Email:</label><input type="email" name="email" required><br>
+        <label>Contraseña:</label><input type="password" name="contraseña" required><br>
+        <label>Activo o Inactivo:</label><input type="text" name="activo" required><br>
+        <label>Numero de pedidos:</label><input type="number" name="pedidos" required><br>
+        <button type="submit">Registrar</button>
+    </form>
+</div>
+
 {% if mensaje %}
 <p class="mensaje">{{ mensaje }}</p>
 {% endif %}
