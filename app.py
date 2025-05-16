@@ -76,7 +76,7 @@ def dashboard():
 def añadir_producto():
     mensaje = None
     if request.method == "POST":
-        productos = [app.db.productos.find()]
+        productos = [producto for producto in app.db.productos.find({})]
 
 
         id_mas_alto = 0
