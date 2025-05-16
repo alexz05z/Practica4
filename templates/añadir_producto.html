@@ -5,10 +5,6 @@
 {% block content %}
 <h2>Añadir Nuevo Producto</h2>
 
-{% if mensaje %}
-    <p><strong>{{ mensaje }}</strong></p>
-{% endif %}
-
 
 <div>
     <form method="POST">
@@ -27,5 +23,9 @@
         <button type="submit">Añadir Producto</button>
     </form>
 </div>
+
+{% if mensaje %}
+    <p><strong>{{ mensaje }}</strong></p>
+{% endif %}
 
 {% endblock %}
