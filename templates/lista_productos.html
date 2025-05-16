@@ -8,7 +8,7 @@
 <div>
     <ul>
         {% for producto in productos %}
-    
+        <li>ID: {{producto.id}}</li>
         <li>Nombre: {{ producto.nombre }}</li>
         <li>Precio: {{ producto.precio }}</li>
         <li>Stock: 
@@ -20,6 +20,8 @@
         <li>Categoría: {{ producto.categoria }}</li>
         </li>
         <li>Detalle: <a href="{{ url_for('detalle_producto', id_producto=producto._id) }}">Ver detalle</li>
+        
+        <br>
     
         {% endfor %}
     </ul>
