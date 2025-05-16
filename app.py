@@ -141,7 +141,7 @@ def registro_usuario():
 
 @app.route("/usuarios")
 def lista_usuarios():
-    usuarios = [app.db.clientes.find()]
+    usuarios = [cliente for cliente in app.db.clientes.find({})]
     return render_template("lista_usuarios.html", usuarios=usuarios, fecha=fecha)
 
 
