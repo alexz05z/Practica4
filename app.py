@@ -116,12 +116,13 @@ def ver_productos():
 
 
 @app.route("/productos/<id_producto>")
-def detalle_producto(id_producto):
-    producto = app.db.productos.find_one({"_id": ObjectId(id_producto)})
+def detalle_producto(id_producto):   
+    producto = app.db.productos.find({"_id": ObjectId(id_producto)})
+
     if producto:
         return render_template("detalle_producto.html", producto=producto,fecha=fecha)
     else:
-        return render_template("404.html",fecha=fecha), 404
+        return render_template("404.html",fecha=fecha),404
 
 
 @app.route("/registro-usuarios", methods=["GET", "POST"])
@@ -148,6 +149,10 @@ def lista_usuarios():
 @app.errorhandler(404)
 def pagina_no_encontrada(e):
     return render_template("404.html"), 404
+
+@app.errorhandler(500)
+def pagina_no_encontrada(e):
+    return render_template("404.html")
 
 
 if __name__ == '__main__':
