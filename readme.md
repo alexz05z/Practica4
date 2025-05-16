@@ -1,6 +1,7 @@
-# Panel de Gestion de Tienda Online --> TecnoMarket (Practica Final) 
+# Panel de Gestion de Tienda Online --> TecnoMarket (Practica 4) 
 
-Es una aplicacion la cual te permite ver los productos , clientes y pedidos que hay en la tienda TecnoMarket 
+Es una aplicacion la cual te permite ver los productos , clientes y pedidos que hay en la tienda TecnoMarket .
+A la vez puedes registrar nuevos productos y clientes
 
 ## Requisitos 
 
@@ -15,6 +16,7 @@ Es una aplicacion la cual te permite ver los productos , clientes y pedidos que 
     -Abrir una terminal en la carpeta del proyecto y lanzar los siguientes comandos:
 
     pip install -r requirements.txt
+
 
 ## Ejecucion 
     
